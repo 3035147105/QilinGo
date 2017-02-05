@@ -24,7 +24,7 @@ func Time()  {
 }
 //go中 操作字符串的包
 func  TestString(s1 string, s2 string){
-	fmt.Printf("%s中是否包含%s吗? %v",s1,s2,strings.Contains(s1, s2))
+	fmt.Printf("%s中是否包含%s吗? %v\n",s1,s2,strings.Contains(s1, s2))
 }
 
 //循环一个list

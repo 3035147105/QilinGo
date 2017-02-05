@@ -28,4 +28,5 @@ func main() {
 	fmt.Printf("字符表达式:%s\n", "你好")
 	ghq.Time()
 	ghq.TestString("gaohaiq","hai")
+	ghq.TestStruct()
 }
