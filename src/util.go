@@ -27,5 +27,11 @@ func  TestString(s1 string, s2 string){
 	fmt.Printf("%s中是否包含%s吗? %v\n",s1,s2,strings.Contains(s1, s2))
 }
 
-//循环一个list
 
+func Addd(x,y int){
+	fmt.Printf("the sun of %d and %d is: %d\n", x, y, x+y)
+}
+//go允许函数的入参是另一个函数
+func Callback(y int , f func(int , int)){
+	f(y, 2)
+}

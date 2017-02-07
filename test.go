@@ -11,7 +11,13 @@ var a = "G"
 var b string
 var num1 int
 var e error
+var ch = make(chan int)
 
+func fo(id int)  {
+	fmt.Printf("子线程%d的方法开始执行\n", id)
+	ch <- id
+	fmt.Printf("子线程%d的方法执行完了\n", id)
+}
 func main() {
 	//var str string = "This is an example of a string"
 	//fmt.Printf("T/F? Does the string \"%s\" have prefix %s? ", str, "Th")
@@ -27,7 +33,18 @@ func main() {
 	//fmt.Println(reply)//0xc82000a310：内存地址表示方法
 	//fmt.Println(*reply)//12
 	//testFor()
-	leijia()
+	//leijia()
+	/**
+	    在主线程中只往信道里塞数据，而不取数据会报死锁错误
+	    写到另一个方法fo中，然后用go fo()的方式去调用就不会出错
+	    原因是否因为 信道会阻塞当前线程，阻塞的是fo，对main方法没有影响？
+	 */
+	fmt.Println("this line code is run?")
+	//go fo(1)
+	//go fo(2)
+	//go fo(3)
+	ch  <- 1
+	fmt.Println("this line code wont run")
 }
 //使用:=可以高效的创建一个新的变量，局限性是只能在函数中使用
 func bingxingfuzhi()  {

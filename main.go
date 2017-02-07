@@ -29,4 +29,11 @@ func main() {
 	ghq.Time()
 	ghq.TestString("gaohaiq","hai")
 	ghq.TestStruct()
+	ghq.TestMap()
+	ghq.TestPtr()
+	ghq.Update()
+	ghq.Callback(2, ghq.Addd)//go允许函数作为参数
+	ghq.TestChan()
+	ghq.TestChan1()
+	//time.Sleep(1000)
 }
